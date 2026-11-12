@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Archive — 2050</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <a class="brand" href="#">
+            <div class="brand-icon">M</div>
+            <div>
+                <strong>MEMORY<span>ARCHIVE</span></strong>
+                <small>FUTURE SYSTEM 2050</small>
+            </div>
+        </a>
+
+        <div class="menu-label">WORKSPACE</div>
+
+        <nav>
+            <button class="nav-link active" data-page="home">
+                <span>⌂</span> Visão geral
+            </button>
+            <button class="nav-link" data-page="memories">
+                <span>◈</span> Minhas memórias
+            </button>
+            <button class="nav-link" data-page="timeline">
+                <span>◷</span> Linha do tempo
+            </button>
+        </nav>
+
+        <div class="menu-label category-label">CATEGORIAS</div>
+
+        <nav>
+            <button class="nav-link category-link" data-category="Pessoal"><span class="dot blue-dot"></span> Pessoal</button>
+            <button class="nav-link category-link" data-category="Viagens"><span class="dot purple-dot"></span> Viagens</button>
+            <button class="nav-link category-link" data-category="Família"><span class="dot pink-dot"></span> Família</button>
+            <button class="nav-link category-link" data-category="Amigos"><span class="dot green-dot"></span> Amigos</button>
+            <button class="nav-link category-link" data-category="Outros"><span class="dot yellow-dot"></span> Outros</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="storage-card">
+                <div class="storage-icon">✧</div>
+                <strong>Seu espaço digital</strong>
+                <p>Suas memórias, sempre organizadas.</p>
+                <div class="storage-bar"><span></span></div>
+                <small>ARMAZENAMENTO LOCAL</small>
+            </div>
+            <div class="profile">
+                <div class="avatar">MA</div>
+                <div>
+                    <strong>Memory User</strong>
+                    <small>Personal account</small>
+                </div>
+                <span class="profile-status"></span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div class="breadcrumb">WORKSPACE <span>/</span> <strong id="pageName">OVERVIEW</strong></div>
+            <div class="top-actions">
+                <div class="system-status"><span></span> SYSTEM ONLINE</div>
+                <button class="top-add" id="openModal">+ Nova memória</button>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <span class="eyebrow">✦ YOUR PERSONAL DIGITAL UNIVERSE</span>
+                <h1>Seu universo.<br><span>Suas memórias.</span></h1>
+                <p>Preserve momentos, organize histórias e mantenha suas lembranças vivas.</p>
+            </div>
+            <div class="date-display">
+                <small>DATA DO SISTEMA</small>
+                <strong id="currentDate">--/--/----</strong>
+                <span>MEMORY CORE v2.0</span>
+            </div>
+        </section>
+
+        <section class="core-panel">
+            <div class="core-content">
+                <div class="core-label"><span class="pulse"></span> MEMORY CORE ACTIVE</div>
+                <h2>Every memory<br>has a universe.</h2>
+                <p>Seu espaço inteligente para armazenar aquilo que merece ser lembrado.</p>
+                <button class="core-button" id="coreAdd">＋ Armazenar memória</button>
+            </div>
+
+            <div class="orb-area">
+                <div class="orb-ring ring-one"></div>
+                <div class="orb-ring ring-two"></div>
+                <div class="orb-ring ring-three"></div>
+                <div class="orb">
+                    <div class="orb-inner">M</div>
+                </div>
+                <span class="orb-caption">DIGITAL MEMORY</span>
+            </div>
+            <div class="core-decoration">2050 / ARCHIVE SYSTEM</div>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <div class="stat-top"><span>MEMÓRIAS ARQUIVADAS</span><span class="stat-symbol">◈</span></div>
+                <strong id="totalMemories">0</strong>
+                <small>Registros no seu arquivo</small>
+            </article>
+            <article class="stat-card">
+                <div class="stat-top"><span>CATEGORIAS ATIVAS</span><span class="stat-symbol purple">▦</span></div>
+                <strong id="totalCategories">0</strong>
+                <small>Grupos de organização</small>
+            </article>
+            <article class="stat-card">
+                <div class="stat-top"><span>STATUS DO SISTEMA</span><span class="stat-symbol green">✧</span></div>
+                <strong class="online-text">ONLINE</strong>
+                <small>Banco de dados local ativo</small>
+            </article>
+        </section>
+
+        <section class="content-section" id="memoriesSection">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">YOUR COLLECTION</span>
+                    <h2 id="sectionTitle">Memórias recentes</h2>
+                    <p>Uma coleção de momentos que fazem parte da sua história.</p>
+                </div>
+                <button class="text-button" id="viewAll">Ver todas ↗</button>
+            </div>
+
+            <div class="filters">
+                <div class="search">
+                    <span>⌕</span>
+                    <input type="search" id="searchInput" placeholder="Pesquisar uma lembrança...">
+                </div>
+                <select id="filterCategory">
+                    <option value="Todas">Todas as categorias</option>
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Viagens">Viagens</option>
+                    <option value="Família">Família</option>
+                    <option value="Amigos">Amigos</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="memory-grid" id="memoryList"></div>
+
+            <div class="empty" id="emptyState">
+                <div>✧</div>
+                <h3>Seu universo está esperando.</h3>
+                <p>Adicione sua primeira lembrança e comece sua coleção.</p>
+                <button class="top-add" id="emptyAdd">＋ Criar primeira memória</button>
+            </div>
+        </section>
+
+        <section class="timeline-panel" id="timelineSection">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">YOUR HISTORY</span>
+                    <h2>Linha do tempo</h2>
+                    <p>Uma jornada através das suas lembranças.</p>
+                </div>
+            </div>
+            <div id="timeline"></div>
+        </section>
+
+        <footer>
+            <span>MEMORY ARCHIVE © 2050</span>
+            <span>BUILT FOR THE FUTURE <b>✦</b></span>
+        </footer>
+    </main>
+</div>
+
+<div class="modal" id="memoryModal">
+    <div class="modal-box">
+        <button class="modal-close" id="closeModal">×</button>
+        <span class="eyebrow">MEMORY REGISTRATION</span>
+        <h2>Adicionar memória<span>.</span></h2>
+        <p class="modal-subtitle">Guarde um momento especial no seu universo digital.</p>
+
+        <form id="memoryForm">
+            <label for="memoryTitle">Título da memória</label>
+            <input id="memoryTitle" type="text" placeholder="Ex: Uma viagem inesquecível" maxlength="60" required>
+
+            <label for="memoryDescription">Descrição</label>
+            <textarea id="memoryDescription" placeholder="Conte sua história..." maxlength="500" required></textarea>
+
+            <div class="form-row">
+                <div>
+                    <label for="memoryCategory">Categoria</label>
+                    <select id="memoryCategory">
+                        <option value="Pessoal">Pessoal</option>
+                        <option value="Viagens">Viagens</option>
+                        <option value="Família">Família</option>
+                        <option value="Amigos">Amigos</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="memoryDate">Data</label>
+                    <input id="memoryDate" type="date" required>
+                </div>
+            </div>
+
+            <button type="submit" class="save-button">Salvar no Memory Archive ↗</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
